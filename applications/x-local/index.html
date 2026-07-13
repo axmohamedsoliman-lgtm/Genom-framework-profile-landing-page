@@ -125,7 +125,10 @@
         <a href="../../index.html#applications" class="back-link">← Back to Applications</a>
         
         <header>
-            <h1 id="app-name">Loading...</h1>
+            <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 8px;">
+                <img src="icon.png" alt="App Icon" style="width: 64px; height: 64px; border-radius: 16px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
+                <h1 id="app-name" style="margin-bottom: 0;">Loading...</h1>
+            </div>
             <div id="app-type" class="app-type"></div>
             <p id="app-desc" class="app-desc"></p>
             <div id="app-tags" class="tags"></div>
