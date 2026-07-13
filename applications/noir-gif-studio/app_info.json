@@ -1,0 +1,12 @@
+﻿{
+    "tags":  [
+                 "Vite",
+                 "gifenc",
+                 "IndexedDB",
+                 "Canvas API",
+                 "Timeline"
+             ],
+    "description":  "Professional-grade, browser-based GIF editor featuring a cinematic dark aesthetic. Provides a CapCut-style multi-track timeline interface optimized for creating, editing, and exporting animated GIFs with unprecedented speed.",
+    "name":  "Noir GIF Studio",
+    "type":  "Professional GIF Editor"
+}

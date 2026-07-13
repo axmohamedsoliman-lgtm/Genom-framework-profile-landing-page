@@ -1,0 +1,12 @@
+﻿{
+    "tags":  [
+                 "Python",
+                 "WebView2",
+                 "AES-256",
+                 "Nginx",
+                 "Analytics"
+             ],
+    "description":  "Cross-platform Python desktop application for managing Nginx, PHP, and custom server processes. Features real-time analytics, encrypted update delivery (AES-256 machine-bound keys), built-in terminal emulator, and live process monitoring.",
+    "name":  "Modern Server",
+    "type":  "Server Management Platform"
+}

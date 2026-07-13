@@ -1,0 +1,12 @@
+﻿{
+    "tags":  [
+                 "llama.cpp",
+                 "Gemma 3 1B",
+                 "SmolVLM2",
+                 "Embeddings",
+                 "RAG"
+             ],
+    "description":  "Sequential multi-model AI pipeline running entirely on-device. Permanent text model (Gemma 3 1B), on-demand vision analysis (SmolVLM2), semantic search via embeddings. The sequencing logic runs in JavaScript — the bridge provides atomic load/infer/unload primitives.",
+    "name":  "Naomi AI",
+    "type":  "On-Device AI Assistant"
+}

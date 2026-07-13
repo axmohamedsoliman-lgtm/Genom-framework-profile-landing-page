@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #171717;
+            --primary: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #262626;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--text-main); }
+        h1 { margin: 0 0 10px 0; font-size: 36px; font-weight: 700; }
+        .app-type { color: var(--primary); font-size: 18px; font-weight: 500; margin-bottom: 20px; }
+        .app-desc { font-size: 16px; color: var(--text-muted); max-width: 800px; margin-bottom: 24px; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+        .tag { background: var(--surface); border: 1px solid var(--border); padding: 4px 12px; border-radius: 100px; font-size: 12px; color: var(--text-muted); }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .media-item {
+            background: var(--surface);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Hide element dynamically using JS if it errors */
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../../index.html#applications" class="back-link">← Back to Applications</a>
+        
+        <header>
+            <h1 id="app-name">Loading...</h1>
+            <div id="app-type" class="app-type"></div>
+            <p id="app-desc" class="app-desc"></p>
+            <div id="app-tags" class="tags"></div>
+        </header>
+
+        <h2>Gallery</h2>
+        <div class="media-grid" id="media-grid">
+            <!-- Video Preview -->
+            <div class="media-item" id="video-container">
+                <video id="video-preview" autoplay loop muted playsinline>
+                    <source src="video_preview.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- Screenshots 1 to 7 -->
+            <div class="media-item" id="img-container-1"><img src="screenshot_1.png" alt="Screenshot 1" onerror="document.getElementById('img-container-1').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-2"><img src="screenshot_2.png" alt="Screenshot 2" onerror="document.getElementById('img-container-2').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-3"><img src="screenshot_3.png" alt="Screenshot 3" onerror="document.getElementById('img-container-3').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-4"><img src="screenshot_4.png" alt="Screenshot 4" onerror="document.getElementById('img-container-4').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-5"><img src="screenshot_5.png" alt="Screenshot 5" onerror="document.getElementById('img-container-5').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-6"><img src="screenshot_6.png" alt="Screenshot 6" onerror="document.getElementById('img-container-6').classList.add('hidden');"></div>
+            <div class="media-item" id="img-container-7"><img src="screenshot_7.png" alt="Screenshot 7" onerror="document.getElementById('img-container-7').classList.add('hidden');"></div>
+        </div>
+    </div>
+
+    <script>
+        // Check if video exists by looking for error on the video element's source
+        const videoElement = document.getElementById('video-preview');
+        const videoContainer = document.getElementById('video-container');
+        
+        videoElement.addEventListener('error', function(e) {
+            videoContainer.classList.add('hidden');
+        }, true);
+        
+        // Wait a small bit and check network state for video (if it's completely missing)
+        setTimeout(() => {
+            if (videoElement.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
+                videoContainer.classList.add('hidden');
+            }
+        }, 500);
+
+        // Fetch JSON
+        fetch('app_info.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('app-name').textContent = data.name;
+                document.getElementById('app-type').textContent = data.type;
+                document.getElementById('app-desc').textContent = data.description;
+                
+                const tagsContainer = document.getElementById('app-tags');
+                data.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'tag';
+                    span.textContent = tag;
+                    tagsContainer.appendChild(span);
+                });
+            })
+            .catch(err => {
+                console.error("Error loading app_info.json", err);
+                document.getElementById('app-name').textContent = "Application Data Missing";
+                document.getElementById('app-desc').textContent = "Please ensure app_info.json exists in this folder.";
+            });
+    </script>
+</body>
+</html>

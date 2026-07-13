@@ -1,0 +1,11 @@
+﻿{
+    "tags":  [
+                 "Web Audio API",
+                 "MusicService",
+                 "Waveform",
+                 "File I/O"
+             ],
+    "description":  "Professional audio workstation with waveform visualization and multi-track editing. Uses Genom\u0027s native file APIs for full filesystem access and the background audio service for uninterrupted playback even when backgrounded.",
+    "name":  "Noir Audio Studio",
+    "type":  "Professional Audio Workstation"
+}

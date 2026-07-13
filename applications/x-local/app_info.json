@@ -1,0 +1,11 @@
+﻿{
+    "tags":  [
+                 "MediaStore",
+                 "Chunk Streaming",
+                 "Thumbnails",
+                 "Gallery"
+             ],
+    "description":  "Full device media browser using Genom\u0027s scanDeviceMedia, getVideoThumbnail, and streamFileChunk APIs. Supports image viewing, video playback, audio browsing, and MediaStore grouped scanning — all at native speed.",
+    "name":  "Noir GIF Studio / X-Local",
+    "type":  "Media Gallery \u0026 File Manager"
+}

@@ -1,0 +1,11 @@
+﻿{
+    "tags":  [
+                 "Genom Runtime",
+                 "OTA Updates",
+                 "Offline-First",
+                 "Custom Loader"
+             ],
+    "description":  "Full-featured clinic management — patient records, appointment scheduling, billing, and reporting — running inside the Genom runtime. Deployed via OTA update pipeline with a custom SYNCED loader that animates in sync with the loading progress.",
+    "name":  "Genom Clinic",
+    "type":  "Clinic Management System"
+}
