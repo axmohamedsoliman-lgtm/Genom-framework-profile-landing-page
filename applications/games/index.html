@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -136,21 +136,25 @@
 
         <h2>Gallery</h2>
         <div class="media-grid" id="media-grid">
-            <!-- Video Preview -->
-            <div class="media-item" id="video-container">
-                <video id="video-preview" autoplay loop muted playsinline>
-                    <source src="video_preview.mp4" type="video/mp4">
-                </video>
+            <!-- Mobile Video -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">📱 Mobile Preview</div>
+                <div class="media-item" id="video-mobile-container">
+                    <video id="video-mobile" autoplay loop muted playsinline>
+                        <source src="video_mobile.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-            
-            <!-- Screenshots 1 to 7 -->
-            <div class="media-item" id="img-container-1"><img src="screenshot_1.png" alt="Screenshot 1" onerror="document.getElementById('img-container-1').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-2"><img src="screenshot_2.png" alt="Screenshot 2" onerror="document.getElementById('img-container-2').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-3"><img src="screenshot_3.png" alt="Screenshot 3" onerror="document.getElementById('img-container-3').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-4"><img src="screenshot_4.png" alt="Screenshot 4" onerror="document.getElementById('img-container-4').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-5"><img src="screenshot_5.png" alt="Screenshot 5" onerror="document.getElementById('img-container-5').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-6"><img src="screenshot_6.png" alt="Screenshot 6" onerror="document.getElementById('img-container-6').classList.add('hidden');"></div>
-            <div class="media-item" id="img-container-7"><img src="screenshot_7.png" alt="Screenshot 7" onerror="document.getElementById('img-container-7').classList.add('hidden');"></div>
+
+            <!-- Desktop Video -->
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">🖥️ Desktop Preview</div>
+                <div class="media-item" id="video-desktop-container">
+                    <video id="video-desktop" autoplay loop muted playsinline>
+                        <source src="video_desktop.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -199,20 +203,18 @@
             });
         });
 
-        // Check if video exists by looking for error on the video element's source
-        const videoElement = document.getElementById('video-preview');
-        const videoContainer = document.getElementById('video-container');
-        
-        videoElement.addEventListener('error', function(e) {
-            videoContainer.classList.add('hidden');
-        }, true);
-        
-        // Wait a small bit and check network state for video (if it's completely missing)
-        setTimeout(() => {
-            if (videoElement.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
-                videoContainer.classList.add('hidden');
-            }
-        }, 500);
+        // Hide mobile/desktop video containers if their video fails to load
+        ['video-mobile', 'video-desktop'].forEach(id => {
+            const vid = document.getElementById(id);
+            const container = vid ? vid.closest('.media-item') : null;
+            if (!vid || !container) return;
+            vid.addEventListener('error', () => container.classList.add('hidden'), true);
+            setTimeout(() => {
+                if (vid.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
+                    container.classList.add('hidden');
+                }
+            }, 500);
+        });
 
         // Fetch JSON
         fetch('app_info.json')

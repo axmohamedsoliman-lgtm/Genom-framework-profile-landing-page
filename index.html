@@ -711,14 +711,16 @@
         <a href="applications/games/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
-                <div class="app-icon app-icon-orange">🎮</div>
+                <div class="app-icon app-icon-orange" style="padding: 0; overflow: hidden; background: transparent; border: none;">
+                    <img src="applications/games/icon.png" alt="Game Icon" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div>
                     <div class="app-name">I Identify as a Horse</div>
-                    <div class="app-type">Custom 3D Game</div>
+                    <div class="app-type">3D Game Concept &amp; Tech Demo</div>
                 </div>
             </div>
             <div class="app-card-img">
-                <img src="applications/games/screenshot_1.png" alt="I Identify as a Horse" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/games/</div></div>'">
+                <img src="applications/games/icon.png" alt="I Identify as a Horse" style="object-fit: cover;" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/games/</div></div>'">
             </div>
             <div class="app-card-body">
                 <p class="app-desc">A fully custom 3D game distributed as a white-label Genom APK. Demonstrates GPU-accelerated WebGL rendering at 60fps through the hardware-composited WebView. Built with PlayCanvas and wrapped via the Genom build pipeline.</p>

@@ -1,11 +1,14 @@
 {
     "tags":  [
                  "WebGL",
-                 "60fps",
                  "PlayCanvas",
-                 "White-Label"
+                 "3D Characters",
+                 "Animation",
+                 "Game Design",
+                 "Concept Demo"
              ],
-    "description":  "A fully custom 3D game distributed as a white-label Genom APK. Demonstrates GPU-accelerated WebGL rendering at 60fps through the hardware-composited WebView. Built with PlayCanvas and wrapped via the Genom build pipeline.",
+    "description":  "A 3D game concept built entirely inside a Genom APK using PlayCanvas WebGL. This is an early-stage concept demo showcasing professional-grade main menu design, cinematic scene composition, character rigging, and fluid 3D movement animations. The game's direction and content were never finalized — but the technical execution and visual polish speak for themselves.",
     "name":  "I Identify as a Horse",
-    "type":  "Custom 3D Game"
+    "type":  "3D Game Concept & Tech Demo"
 }
+
