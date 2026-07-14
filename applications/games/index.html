@@ -203,17 +203,12 @@
             });
         });
 
-        // Hide mobile/desktop video containers if their video fails to load
+        // Only hide video containers on actual error — no timeout that fires before large files load
         ['video-mobile', 'video-desktop'].forEach(id => {
             const vid = document.getElementById(id);
             const container = vid ? vid.closest('.media-item') : null;
             if (!vid || !container) return;
             vid.addEventListener('error', () => container.classList.add('hidden'), true);
-            setTimeout(() => {
-                if (vid.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
-                    container.classList.add('hidden');
-                }
-            }, 500);
         });
 
         // Fetch JSON
