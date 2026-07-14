@@ -135,22 +135,22 @@
         </header>
 
         <h2>Gallery</h2>
-        <div class="media-grid" id="media-grid">
+        <div style="display: flex; gap: 16px; align-items: flex-start;">
             <!-- Mobile Video -->
-            <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 0 0 auto;">
                 <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">📱 Mobile Preview</div>
-                <div class="media-item" id="video-mobile-container">
-                    <video id="video-mobile" autoplay loop muted playsinline>
+                <div class="media-item" id="video-mobile-container" style="height: 500px; width: 240px; overflow: hidden; cursor: pointer;">
+                    <video id="video-mobile" autoplay loop muted playsinline style="height: 100%; width: 100%; object-fit: cover;">
                         <source src="video_mobile.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
 
             <!-- Desktop Video -->
-            <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 auto;">
                 <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">🖥️ Desktop Preview</div>
-                <div class="media-item" id="video-desktop-container">
-                    <video id="video-desktop" autoplay loop muted playsinline>
+                <div class="media-item" id="video-desktop-container" style="height: 500px; overflow: hidden; cursor: pointer;">
+                    <video id="video-desktop" autoplay loop muted playsinline style="height: 100%; width: 100%; object-fit: cover;">
                         <source src="video_desktop.mp4" type="video/mp4">
                     </video>
                 </div>
