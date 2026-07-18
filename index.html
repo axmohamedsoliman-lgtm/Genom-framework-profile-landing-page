@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genom Framework — Portfolio</title>
-    <meta name="description" content="Genom is an enterprise-grade Android application runtime built to transform web applications into fully native-feeling Android experiences with 80+ native APIs.">
+    <title>Genom — Portfolio</title>
+    <meta name="description" content="Seven production-grade applications — from 3D games to AI assistants — built by one developer on a proprietary mobile runtime.">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -488,14 +488,13 @@
 <body>
 
 <nav>
-    <div class="nav-logo"><span>Genom</span> Framework</div>
+    <div class="nav-logo"><span>Genom</span></div>
     <div class="nav-links">
-        <a href="#architecture">Architecture</a>
         <a href="#applications">Applications</a>
-        <a href="#native-api">Native API</a>
         <a href="#development">Development</a>
+        <a href="#skills">Skills</a>
     </div>
-    <a href="https://github.com/axmohamedsoliman-lgtm/Genom-framework-and-MSA-showcase" target="_blank" class="nav-cta">GitHub ↗</a>
+    <a href="https://github.com/axmohamedsoliman-lgtm" target="_blank" class="nav-cta">GitHub ↗</a>
 </nav>
 
 <!-- HERO -->
@@ -505,11 +504,12 @@
 
 
 
-    <h1>Built<br><span class="accent">Different.</span></h1>
+    <h1>An Invisible<br><span class="accent">Superstructure</span></h1>
 
     <p class="hero-sub">
-        Seven production-grade applications — from 3D games to AI assistants —
-        all engineered by one developer, all running on a proprietary mobile runtime.
+        Seven production-grade applications — a 3D open-world game, an on-device AI assistant,
+        a clinic management system, a media gallery, audio &amp; GIF studios, and a server orchestration platform.
+        All built by one developer. All running on a proprietary mobile runtime.
     </p>
 
     <div class="hero-actions">
@@ -545,44 +545,45 @@
 <!-- ARCHITECTURE -->
 <section class="section" id="architecture">
     <div class="section-label fade-up">System Design</div>
-    <h2 class="section-title fade-up">Five-Layer Architecture</h2>
+    <h2 class="section-title fade-up">An Invisible Superstructure</h2>
     <p class="section-desc fade-up">
-        Every layer has a single purpose. The native shell disappears — the user's application is all that matters.
+        Genom operates across multiple architectural layers — from the web app surface down to Android system services.
+        Each layer has a single purpose. The runtime disappears — the user's application is all that remains.
     </p>
 
     <div class="fade-up" style="margin-bottom: 48px;">
         <div class="layer">
             <div class="layer-icon">🌐</div>
             <div class="layer-name">Web Application</div>
-            <div class="layer-desc">HTML/CSS/JS — game engine, clinic system, AI assistant, media gallery</div>
+            <div class="layer-desc">Any web app — game engine, clinic system, AI assistant, media gallery</div>
             <span class="layer-badge badge-cyan">Any SPA / PWA</span>
         </div>
-        <div class="layer-arrow">↕ postMessage</div>
+        <div class="layer-arrow">↕ Bidirectional bridge</div>
         <div class="layer">
-            <div class="layer-icon">💉</div>
-            <div class="layer-name">Injected Polyfills</div>
-            <div class="layer-desc">Notification Bridge · Download Interceptor · AudioContext Lifecycle Manager</div>
-            <span class="layer-badge badge-green">Transparent</span>
+            <div class="layer-icon">🔗</div>
+            <div class="layer-name">Injected Compatibility Layer</div>
+            <div class="layer-desc">Transparent polyfills that extend standard web APIs to native capabilities</div>
+            <span class="layer-badge badge-green">Invisible</span>
         </div>
-        <div class="layer-arrow">↕ onMessage</div>
+        <div class="layer-arrow">↕ Message contract</div>
         <div class="layer">
             <div class="layer-icon">⚛️</div>
-            <div class="layer-name">App.tsx — React Native Bridge</div>
-            <div class="layer-desc">Message Router (60+ types) · AppState lifecycle · WebView configuration</div>
+            <div class="layer-name">TypeScript Message Router</div>
+            <div class="layer-desc">Routes all web-to-native communication. Handles app lifecycle, WebView config, and state management.</div>
             <span class="layer-badge badge-purple">TypeScript</span>
         </div>
-        <div class="layer-arrow">↕ NativeModules</div>
+        <div class="layer-arrow">↕ Native modules</div>
         <div class="layer">
             <div class="layer-icon">☕</div>
-            <div class="layer-name">GenomModule.java — 2,400+ lines</div>
-            <div class="layer-desc">File I/O · Media · Downloads · Vibration · Notifications · PiP · Streaming</div>
+            <div class="layer-name">Java Native Bridge — 2,400+ lines</div>
+            <div class="layer-desc">80+ native device APIs: filesystem, media, downloads, haptics, notifications, streaming, PiP, AI inference</div>
             <span class="layer-badge badge-purple">Java</span>
         </div>
-        <div class="layer-arrow">↕ Android Services</div>
+        <div class="layer-arrow">↕ Android platform</div>
         <div class="layer">
             <div class="layer-icon">🔧</div>
-            <div class="layer-name">Android Services + Embedded HTTP Server</div>
-            <div class="layer-desc">ContinuousWorkService · MusicService · NanoHTTPD (127.0.0.1, dynamic port, 70+ MIME types)</div>
+            <div class="layer-name">Android Services + Embedded Server</div>
+            <div class="layer-desc">Background persistence services, embedded local HTTP server for CORS-free asset serving</div>
             <span class="layer-badge badge-green">SDK 24–34</span>
         </div>
     </div>
@@ -592,11 +593,11 @@
             <div class="code-dot code-dot-red"></div>
             <div class="code-dot code-dot-yellow"></div>
             <div class="code-dot code-dot-green"></div>
-            <span class="code-filename">bridge.js — Canonical Native Communication Layer</span>
+            <span class="code-filename">bridge.js — The communication contract</span>
         </div>
         <div class="code-body">
 <span class="comment">// Every web app running inside Genom uses this exact pattern.</span>
-<span class="comment">// The entire 80+ API surface is accessible through one function.</span>
+<span class="comment">// The entire native API surface is accessible through one function.</span>
 
 <span class="kw">export function</span> <span class="fn">send</span>(<span class="var">type</span>, <span class="var">payload</span> = {}) {
     <span class="kw">if</span> (window.ReactNativeWebView) {
@@ -604,16 +605,11 @@
     }
 }
 
-<span class="comment">// Background persistence — keeps WebView alive even when app is backgrounded</span>
-<span class="kw">export function</span> <span class="fn">startCW</span>(<span class="var">title</span>, <span class="var">body</span>) { <span class="fn">send</span>(<span class="str">'startContinuousWork'</span>, { <span class="var">title</span>, <span class="var">body</span> }); }
-
-<span class="comment">// Persistent key-value store — reads/writes to native sandbox via embedded HTTP server</span>
-<span class="kw">export const</span> <span class="var">dataStore</span> = {
-    <span class="fn">write</span>: (<span class="var">key</span>, <span class="var">data</span>) =&gt; <span class="fn">fetch</span>(<span class="str">`http://127.0.0.1:${port}/_data/${key}`</span>, { method: <span class="str">'POST'</span>, body: data }),
-    <span class="fn">read</span>:  (<span class="var">key</span>) =&gt; <span class="fn">fetch</span>(<span class="str">`http://127.0.0.1:${port}/_data/${key}`</span>).<span class="fn">then</span>(<span class="var">r</span> =&gt; <span class="var">r</span>.<span class="fn">json</span>()),
-    <span class="fn">list</span>:  (<span class="var">dir</span>) =&gt; <span class="fn">fetch</span>(<span class="str">`http://127.0.0.1:${port}/_data/${dir}`</span>).<span class="fn">then</span>(<span class="var">r</span> =&gt; <span class="var">r</span>.<span class="fn">json</span>()),
-    <span class="fn">delete</span>: (<span class="var">key</span>) =&gt; <span class="fn">fetch</span>(<span class="str">`http://127.0.0.1:${port}/_data/${key}`</span>, { method: <span class="str">'DELETE'</span> })
-};
+<span class="comment">// The native capability surface — called identically from any Genom application</span>
+<span class="fn">send</span>(<span class="str">'browseDirectory'</span>, { path });         <span class="comment">// Native filesystem</span>
+<span class="fn">send</span>(<span class="str">'startContinuousWork'</span>, { title, body }); <span class="comment">// Background persistence</span>
+<span class="fn">send</span>(<span class="str">'loadAI'</span>, { modelPath, type });        <span class="comment">// On-device LLM</span>
+<span class="fn">send</span>(<span class="str">'getVideoThumbnail'</span>, { filePath });   <span class="comment">// Native media extraction</span>
         </div>
     </div>
 </section>
@@ -629,7 +625,7 @@
     </p>
 
     <div class="apps-grid fade-up">
-        <a href="applications/naomi-ai/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/naomi-ai/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-purple" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -644,19 +640,19 @@
                 <img src="applications/naomi-ai/screenshot_1.png" alt="Naomi AI" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/naomi-ai/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Sequential multi-model AI pipeline running entirely on-device. Permanent text model (Gemma 3 1B), on-demand vision analysis (SmolVLM2), semantic search via embeddings. The sequencing logic runs in JavaScript — the bridge provides atomic load/infer/unload primitives.</p>
+                <p class="app-desc">On-device AI assistant with a 3-slot model architecture — a resident text model, on-demand vision analysis, and semantic embeddings. Routes every user message to the right tool automatically, no selection required. Zero cloud dependency.</p>
                 <div class="app-tags">
+                    <span class="tag">Native Android</span>
+                    <span class="tag">On-Device AI</span>
+                    <span class="tag">JavaScript</span>
                     <span class="tag">llama.cpp</span>
-                    <span class="tag">Gemma 3 1B</span>
-                    <span class="tag">SmolVLM2</span>
-                    <span class="tag">Embeddings</span>
-                    <span class="tag">RAG</span>
+                    <span class="tag">Vite</span>
                 </div>
             </div>
         </div>
         </a>
 
-        <a href="applications/clinic/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/clinic/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-cyan" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -671,18 +667,18 @@
                 <img src="applications/clinic/screenshot_1.png" alt="Genom Clinic" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/clinic/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Full-featured clinic management — patient records, appointment scheduling, billing, and reporting — running inside the Genom runtime. Deployed via OTA update pipeline with a custom SYNCED loader that animates in sync with the loading progress.</p>
+                <p class="app-desc">Full clinic management system — patient records, appointments, billing, reporting, and Arabic RTL support. Runs completely offline on a single Android tablet. No server, no cloud, no account required.</p>
                 <div class="app-tags">
-                    <span class="tag">Genom Runtime</span>
-                    <span class="tag">OTA Updates</span>
+                    <span class="tag">Native Android</span>
+                    <span class="tag">JavaScript</span>
                     <span class="tag">Offline-First</span>
-                    <span class="tag">Custom Loader</span>
+                    <span class="tag">Arabic RTL</span>
                 </div>
             </div>
         </div>
         </a>
 
-        <a href="applications/modern-server/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/modern-server/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-green" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -697,19 +693,18 @@
                 <img src="applications/modern-server/screenshot_1.png" alt="Modern Server" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/modern-server/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Cross-platform Python desktop application for managing Nginx, PHP, and custom server processes. Features real-time analytics, encrypted update delivery (AES-256 machine-bound keys), built-in terminal emulator, and live process monitoring.</p>
+                <p class="app-desc">Desktop app for managing multiple local web servers simultaneously. Real-time SSE dashboard, encrypted update delivery, hash-based state cache for instant startup, and Supabase analytics. Built in Python, ships as a standalone executable.</p>
                 <div class="app-tags">
                     <span class="tag">Python</span>
-                    <span class="tag">WebView2</span>
-                    <span class="tag">AES-256</span>
-                    <span class="tag">Nginx</span>
-                    <span class="tag">Analytics</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Encrypted Updates</span>
+                    <span class="tag">Supabase</span>
                 </div>
             </div>
         </div>
         </a>
 
-        <a href="applications/games/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/games/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-orange" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -724,18 +719,18 @@
                 <img src="applications/games/screenshot_1.png" alt="I Identify as a Horse" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">A 3D game concept built inside a Genom APK using PlayCanvas WebGL. Showcases professional-grade main menu design, cinematic scene composition, character rigging, and fluid movement animations. The game direction was never finalized — but the technical execution and visual polish speak for themselves.</p>
+                <p class="app-desc">3D open-world game with procedural city generation, NPC state machines, runtime texture synthesis, soft-body physics, and a spring-damper follow camera. Built in PlayCanvas v2.18.1 and deployed as a native Android app.</p>
                 <div class="app-tags">
+                    <span class="tag">Native Android</span>
                     <span class="tag">PlayCanvas</span>
                     <span class="tag">WebGL</span>
-                    <span class="tag">3D Animation</span>
-                    <span class="tag">Concept Demo</span>
+                    <span class="tag">JavaScript</span>
                 </div>
             </div>
         </div>
         </a>
 
-        <a href="applications/noir-audio-studio/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/noir-audio-studio/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-red" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -750,19 +745,19 @@
                 <img src="applications/noir-audio-studio/screenshot_1.png" alt="Noir Audio Studio" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/noir-audio-studio/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Professional audio workstation with waveform visualization and multi-track editing. Uses Genom's native file APIs for full filesystem access and the background audio service for uninterrupted playback even when backgrounded.</p>
+                <p class="app-desc">Mobile audio editor with waveform visualization, multi-track mixing, and non-destructive editing. Full device filesystem access and background audio playback even when the app is minimized. Runs as a native Android app.</p>
                 <div class="app-tags">
+                    <span class="tag">Native Android</span>
+                    <span class="tag">JavaScript</span>
                     <span class="tag">Web Audio API</span>
-                    <span class="tag">MusicService</span>
-                    <span class="tag">Waveform</span>
-                    <span class="tag">File I/O</span>
+                    <span class="tag">Vite</span>
                 </div>
             </div>
         </div>
         </a>
 
         
-        <a href="applications/noir-gif-studio/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/noir-gif-studio/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-red" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -777,19 +772,18 @@
                 <img src="applications/noir-gif-studio/screenshot_1.png" alt="Noir GIF Studio" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/noir-gif-studio/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Professional-grade, browser-based GIF editor featuring a cinematic dark aesthetic. Provides a CapCut-style multi-track timeline interface optimized for creating, editing, and exporting animated GIFs with unprecedented speed.</p>
+                <p class="app-desc">Video-to-GIF converter with a frame-level editor, timeline scrubbing, and 3-format export (GIF/MP4/WebM). Batch export via JSZip. Everything processed on-device, no uploads. Runs as a native Android app.</p>
                 <div class="app-tags">
-                    <span class="tag">Vite</span>
-                    <span class="tag">gifenc</span>
-                    <span class="tag">IndexedDB</span>
+                    <span class="tag">Native Android</span>
+                    <span class="tag">JavaScript</span>
                     <span class="tag">Canvas API</span>
-                    <span class="tag">Timeline</span>
+                    <span class="tag">JSZip</span>
                 </div>
             </div>
         </div>
         </a>
 
-        <a href="applications/x-local/index.html" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <a href="https://genom-showcase.pages.dev/applications/x-local/" class="app-card-link" style="text-decoration: none; color: inherit; display: block;">
         <div class="app-card">
             <div class="app-card-header">
                 <div class="app-icon app-icon-gold" style="padding: 0; overflow: hidden; background: transparent; border: none;">
@@ -804,64 +798,18 @@
                 <img src="applications/x-local/screenshot_1.png" alt="X-Local" onerror="this.parentElement.innerHTML='<div class=\'screenshot-placeholder\'><div class=\'icon\'>📷</div><div>Add screenshot to<br>applications/x-local/</div></div>'">
             </div>
             <div class="app-card-body">
-                <p class="app-desc">Full device media browser using Genom's scanDeviceMedia, getVideoThumbnail, and streamFileChunk APIs. Supports image viewing, video playback, audio browsing, and MediaStore grouped scanning — all at native speed.</p>
+                <p class="app-desc">Local Android media gallery with native-speed chunked file streaming, instant video thumbnails, and full-text search. Reads directly from device storage. 5 tracked APK releases (v3.0 → v4.7) over active iterative development.</p>
                 <div class="app-tags">
-                    <span class="tag">MediaStore</span>
-                    <span class="tag">Chunk Streaming</span>
-                    <span class="tag">Thumbnails</span>
-                    <span class="tag">Gallery</span>
+                    <span class="tag">Native</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">5 Releases</span>
                 </div>
             </div>
         </div>
         </a>
     </div>
 </div>
-</section>
-
-<!-- NATIVE API -->
-<section class="section" id="native-api">
-    <div class="section-label fade-up">The Bridge</div>
-    <h2 class="section-title fade-up">80+ Native APIs</h2>
-    <p class="section-desc fade-up">All accessible from JavaScript via a single <code style="font-family: var(--font-mono); background: var(--card); padding: 2px 8px; border-radius: 4px; font-size: 14px;">postMessage</code> contract.</p>
-
-    <div class="api-grid fade-up">
-        <div class="api-group">
-            <div class="api-group-header">📂 File System</div>
-            <div class="api-item"><span class="api-method">browseDirectory</span><span class="api-desc">List directory contents</span></div>
-            <div class="api-item"><span class="api-method">readFile</span><span class="api-desc">Read file with encoding control</span></div>
-            <div class="api-item"><span class="api-method">writeFile</span><span class="api-desc">Write data to any path</span></div>
-            <div class="api-item"><span class="api-method">streamFileChunk</span><span class="api-desc">Seek + chunk streaming via RandomAccessFile</span></div>
-            <div class="api-item"><span class="api-method">searchFiles</span><span class="api-desc">Recursive filesystem search</span></div>
-            <div class="api-item"><span class="api-method">moveFile / copyFile</span><span class="api-desc">Native file operations</span></div>
-        </div>
-        <div class="api-group">
-            <div class="api-group-header">🎬 Media & Streaming</div>
-            <div class="api-item"><span class="api-method">scanDeviceMedia</span><span class="api-desc">Scan gallery, audio, video</span></div>
-            <div class="api-item"><span class="api-method">scanMediaGrouped</span><span class="api-desc">MediaStore grouped by folder</span></div>
-            <div class="api-item"><span class="api-method">getVideoThumbnail</span><span class="api-desc">Native frame extraction</span></div>
-            <div class="api-item"><span class="api-method">getVideoMetadata</span><span class="api-desc">Duration, resolution, codec</span></div>
-            <div class="api-item"><span class="api-method">startMusicNotification</span><span class="api-desc">Background audio bypass service</span></div>
-            <div class="api-item"><span class="api-method">shareMultipleFiles</span><span class="api-desc">Native Android share sheet</span></div>
-        </div>
-        <div class="api-group">
-            <div class="api-group-header">🔔 Services & Notifications</div>
-            <div class="api-item"><span class="api-method">startContinuousWork</span><span class="api-desc">Foreground service + WakeLock</span></div>
-            <div class="api-item"><span class="api-method">updateContinuousWork</span><span class="api-desc">Live notification update</span></div>
-            <div class="api-item"><span class="api-method">showHeadsUpNotification</span><span class="api-desc">High-priority alert</span></div>
-            <div class="api-item"><span class="api-method">showProgressNotification</span><span class="api-desc">Progress bar notification</span></div>
-            <div class="api-item"><span class="api-method">startDataSyncService</span><span class="api-desc">Named sync foreground service</span></div>
-            <div class="api-item"><span class="api-method">enterPiP</span><span class="api-desc">Picture-in-Picture mode</span></div>
-        </div>
-        <div class="api-group">
-            <div class="api-group-header">🤖 Haptics & System</div>
-            <div class="api-item"><span class="api-method">vibratePattern</span><span class="api-desc">Custom timing + amplitude arrays</span></div>
-            <div class="api-item"><span class="api-method">vibrateContinuous</span><span class="api-desc">Sustained amplitude vibration</span></div>
-            <div class="api-item"><span class="api-method">setThemeColor</span><span class="api-desc">Dynamic status/nav bar color</span></div>
-            <div class="api-item"><span class="api-method">setStatusBar / setNavBar</span><span class="api-desc">Show/hide system bars</span></div>
-            <div class="api-item"><span class="api-method">checkStorage / requestStorage</span><span class="api-desc">Runtime permission management</span></div>
-            <div class="api-item"><span class="api-method">loadAI / generateText</span><span class="api-desc">On-device LLM inference streaming</span></div>
-        </div>
-    </div>
 </section>
 
 <!-- DEVELOPMENT HISTORY -->
@@ -912,61 +860,60 @@
 </section>
 
 <!-- SKILLS -->
-<section class="section">
+<section class="section" id="skills">
     <div class="section-label fade-up">Technical Stack</div>
     <h2 class="section-title fade-up">Skills Demonstrated</h2>
     <div class="skills-grid fade-up">
         <div class="skill-card">
             <div class="skill-icon">☕</div>
             <div class="skill-name">Java / Android SDK</div>
-            <div class="skill-desc">2,400+ line native module. Foreground services, NanoHTTPD, MediaStore, JNI bridge to llama.cpp.</div>
+            <div class="skill-desc">Android foreground services, MediaStore, JNI bridge for on-device AI inference.</div>
         </div>
         <div class="skill-card">
             <div class="skill-icon">⚛️</div>
             <div class="skill-name">TypeScript / React Native</div>
-            <div class="skill-desc">60+ message type router in App.tsx. 208KB ManagerHTML.ts distribution SPA.</div>
+            <div class="skill-desc">Message routing layer bridging the web and native worlds. Handles message types and full app lifecycle.</div>
         </div>
         <div class="skill-card">
-            <div class="skill-icon">🔐</div>
-            <div class="skill-name">Cryptography</div>
-            <div class="skill-desc">AES-256-CBC, PBKDF2-HMAC-SHA256 (100k iterations), SHA-256 file obfuscation, in-memory decryption.</div>
+            <div class="skill-icon">🐍</div>
+            <div class="skill-name">Python / Windows Platform</div>
+            <div class="skill-desc">Flask multi-server orchestration, PyInstaller, WebView2 desktop shell, Fernet encryption, Supabase.</div>
         </div>
         <div class="skill-card">
             <div class="skill-icon">🤖</div>
             <div class="skill-name">On-Device AI</div>
-            <div class="skill-desc">Sequential LLM pipeline. Text + vision + embedding models. Streaming token output via JNI.</div>
+            <div class="skill-desc">Sequential multi-model pipeline. Text + vision + embedding models managed in slots. Streaming inference via llama.cpp.</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">🔐</div>
+            <div class="skill-name">Security Engineering</div>
+            <div class="skill-desc">AES-256-CBC encryption, PBKDF2-HMAC-SHA256 key derivation, machine-bound keys, in-memory decryption.</div>
         </div>
         <div class="skill-card">
             <div class="skill-icon">🏗️</div>
             <div class="skill-name">System Architecture</div>
-            <div class="skill-desc">5-layer hybrid architecture. Zero-glitch boot doctrine. White-label deployment pipeline.</div>
+            <div class="skill-desc">Multi-layer hybrid runtime design. Automated build pipelines. Zero-glitch boot sequences. Cross-platform deployment.</div>
         </div>
         <div class="skill-card">
-            <div class="skill-icon">🔧</div>
-            <div class="skill-name">DevOps / Build Pipeline</div>
-            <div class="skill-desc">Automated Gradle + Metro builds. AST-level package renaming. Corruption detection and auto-repair.</div>
-        </div>
-        <div class="skill-card">
-            <div class="skill-icon">🐍</div>
-            <div class="skill-name">Python Backend</div>
-            <div class="skill-desc">Asyncio microservices. PyInstaller packaging. Encrypted update delivery. Real-time analytics.</div>
+            <div class="skill-icon">🎮</div>
+            <div class="skill-name">3D / Game Engineering</div>
+            <div class="skill-desc">PlayCanvas WebGL. Procedural city + terrain generation. NPC state machines. Physics simulation.</div>
         </div>
         <div class="skill-card">
             <div class="skill-icon">🌐</div>
-            <div class="skill-name">Web Fundamentals</div>
-            <div class="skill-desc">Vanilla JS/TS, no frameworks. Custom component lifecycle. Event delegation. WebGL. Web Audio API.</div>
+            <div class="skill-name">Full-Stack Web</div>
+            <div class="skill-desc">JavaScript, TypeScript, Vite, Node.js, Flask, REST APIs, SSE, WebSockets, Canvas API, Web Audio API.</div>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <p>Built by <strong>Mohamed Soliman</strong> — Engineering Student, Framework Author</p>
+    <p>Built by <strong>Mohamed Soliman</strong> — Software Engineer</p>
     <p style="margin-top: 8px; font-size: 12px;">6 months · 88 build snapshots · 22 GB development archive</p>
     <div class="footer-links">
-        <a href="../README.md">Repository README</a>
-        <a href="../Docs/Introduction/PHILOSOPHY_AND_VISION.md">Philosophy & Vision</a>
-        <a href="../Docs/Architecture/ARCHITECTURE_OVERVIEW.md">Architecture Docs</a>
+        <a href="https://www.linkedin.com/in/mohamed-soliman-b40153422" target="_blank">LinkedIn</a>
+        <a href="https://github.com/axmohamedsoliman-lgtm" target="_blank">GitHub</a>
     </div>
 </footer>
 
