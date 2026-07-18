@@ -567,9 +567,9 @@
         <div class="layer-arrow">↕ Message contract</div>
         <div class="layer">
             <div class="layer-icon">⚛️</div>
-            <div class="layer-name">TypeScript Message Router</div>
-            <div class="layer-desc">Routes all web-to-native communication. Handles app lifecycle, WebView config, and state management.</div>
-            <span class="layer-badge badge-purple">TypeScript</span>
+            <div class="layer-name">Message Router</div>
+            <div class="layer-desc">Routes all web-to-native communication. Handles app lifecycle, config, and state management.</div>
+            <span class="layer-badge badge-purple">JavaScript</span>
         </div>
         <div class="layer-arrow">↕ Native modules</div>
         <div class="layer">
@@ -599,8 +599,8 @@
 <span class="comment">// The entire native API surface is accessible through one function.</span>
 
 <span class="kw">export function</span> <span class="fn">send</span>(<span class="var">type</span>, <span class="var">payload</span> = {}) {
-    <span class="kw">if</span> (window.ReactNativeWebView) {
-        window.ReactNativeWebView.<span class="fn">postMessage</span>(<span class="fn">JSON.stringify</span>({ <span class="var">type</span>, ...<span class="var">payload</span> }));
+    <span class="kw">if</span> (window.NativeBridge) {
+        window.NativeBridge.<span class="fn">postMessage</span>(<span class="fn">JSON.stringify</span>({ <span class="var">type</span>, ...<span class="var">payload</span> }));
     }
 }
 
